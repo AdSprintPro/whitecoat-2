@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WhiteCoat Media — Stop Being The Best Kept Secret In Medicine.</title>
+<meta name="description" content="6 months. One doctor. A brand patients actually search for. WhiteCoat Media builds the practice you deserve — not another marketing gimmick." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F1EA; --ink:#0B0B0B; --accent:#FF3B00; --yellow:#FFD400;
+  --lime:#C6FF3D; --blue:#1F44FF; --pink:#FF6EC7;
+  --line:2px solid var(--ink); --line-thick:4px solid var(--ink);
+  --shadow:6px 6px 0 var(--ink); --shadow-lg:10px 10px 0 var(--ink);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Archivo Black','Space Grotesk',sans-serif;line-height:.95;letter-spacing:-1.5px;text-transform:uppercase}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.ico{width:24px;height:24px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:square;stroke-linejoin:miter}
+.ico-lg{width:44px;height:44px}
+.ico-xl{width:56px;height:56px}
+.ico-sm{width:18px;height:18px;stroke-width:2.2}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;padding:18px 28px;border:var(--line-thick);font-family:'Archivo Black',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;text-decoration:none;box-shadow:var(--shadow);transition:transform .1s ease, box-shadow .1s ease, background .15s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn:disabled{opacity:.5;cursor:not-allowed;pointer-events:none}
+.marquee{background:var(--ink);color:var(--bg);overflow:hidden;border-top:var(--line-thick);border-bottom:var(--line-thick);padding:14px 0}
+.marquee-track{display:flex;gap:48px;white-space:nowrap;animation:scroll 30s linear infinite;font-family:'Archivo Black',sans-serif;font-size:18px;letter-spacing:1.5px;text-transform:uppercase}
+.marquee-track span{display:inline-flex;align-items:center;gap:48px}
+.marquee-track span::after{content:"✦";color:var(--accent)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:var(--line-thick)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Archivo Black',sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:-.5px;display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{width:34px;height:34px;background:var(--accent);color:#fff;border:var(--line);display:grid;place-items:center;box-shadow:3px 3px 0 var(--ink)}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{text-decoration:none;padding:8px 14px;font-weight:700;font-size:14px;text-transform:uppercase}
+.nav-links a:hover{background:var(--yellow)}
+.nav-cta{background:var(--ink) !important;color:var(--bg) !important;border:var(--line);box-shadow:3px 3px 0 var(--accent);display:inline-flex !important;align-items:center;gap:6px}
+.nav-cta:hover{background:var(--accent) !important}
+@media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
+.urgency{background:var(--ink);color:var(--bg);padding:14px 0;border-bottom:var(--line-thick);text-align:center;font-family:'Archivo Black',sans-serif;font-size:16px;letter-spacing:-.3px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.urgency b{background:var(--accent);color:#fff;padding:3px 10px}
+.urgency .mono{font-size:12px;font-weight:400;color:#aaa;letter-spacing:2px}
+.hero{border-bottom:var(--line-thick);background:repeating-linear-gradient(45deg, transparent 0 20px, rgba(0,0,0,.03) 20px 21px), var(--bg);padding:60px 0 50px;position:relative}
+.hero-grid{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.3fr .9fr;gap:40px;align-items:center}
+.hero-copy .tag{margin-bottom:22px;background:var(--accent);color:#fff}
+.hero h1{font-size:clamp(48px, 8vw, 108px);letter-spacing:-3px;margin-bottom:24px}
+.hero h1 .u{background:var(--yellow);padding:0 8px;display:inline-block;transform:rotate(-1deg)}
+.hero h1 .strike{position:relative;color:#5c5c5c}
+.hero h1 .strike::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;height:8px;background:var(--accent);transform:rotate(-2deg)}
+.hero-sub{font-size:20px;font-weight:500;max-width:640px;margin-bottom:32px}
+.hero-sub b{background:var(--ink);color:var(--bg);padding:2px 6px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+.hero-meta{display:flex;gap:20px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase}
+.hero-meta div{display:flex;align-items:center;gap:8px}
+.hero-meta .ico{width:18px;height:18px;color:var(--accent);stroke:currentColor}
+.hero-side{display:flex;flex-direction:column;gap:16px}
+.stat-card{background:#fff;border:var(--line-thick);box-shadow:var(--shadow);padding:22px;position:relative;display:flex;align-items:center;gap:18px}
+.stat-card:nth-child(1){transform:rotate(-1.5deg);background:var(--yellow)}
+.stat-card:nth-child(2){transform:rotate(1deg);background:var(--lime)}
+.stat-card:nth-child(3){transform:rotate(-.5deg);background:#fff}
+.stat-card .ico-xl{color:var(--ink);flex-shrink:0}
+.stat-card .big{font-family:'Archivo Black',sans-serif;font-size:52px;line-height:.9;letter-spacing:-2px}
+.stat-card .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero h1{font-size:52px;letter-spacing:-2px}.hero-side{flex-direction:row;overflow-x:auto;padding-bottom:8px}.stat-card{min-width:260px}}
+.section{padding:80px 0;border-bottom:var(--line-thick)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.section-head h2{font-size:clamp(38px, 6vw, 72px);letter-spacing:-2.5px;max-width:900px}
+.section-head .tag{align-self:flex-start}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--line-thick);background:var(--ink)}
+.problem-cell{background:var(--bg);padding:32px 28px;position:relative}
+.problem-cell:not(:last-child){border-right:var(--line-thick)}
+.problem-cell .p-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.problem-cell .p-icon{width:48px;height:48px;background:var(--ink);color:var(--bg);border:var(--line);display:grid;place-items:center;flex-shrink:0}
+.problem-cell .p-icon .ico{color:var(--bg);width:26px;height:26px}
+.problem-cell .n{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent)}
+.problem-cell h3{font-size:24px;letter-spacing:-1px;margin-top:2px}
+.problem-cell p{font-size:16px}
+.problem-cell:nth-child(1){background:#fff}
+.problem-cell:nth-child(2){background:var(--yellow)}
+.problem-cell:nth-child(3){background:var(--lime)}
+@media(max-width:820px){.problem-grid{grid-template-columns:1fr}.problem-cell:not(:last-child){border-right:none;border-bottom:var(--line-thick)}}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.pillar{background:#fff;border:var(--line-thick);box-shadow:var(--shadow-lg);padding:32px;position:relative;transition:transform .15s}
+.pillar:hover{transform:translate(-4px,-4px);box-shadow:14px 14px 0 var(--ink)}
+.pillar .p-top{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.pillar .num{background:var(--accent);color:#fff;border:var(--line-thick);width:56px;height:56px;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:22px;box-shadow:4px 4px 0 var(--ink);flex-shrink:0}
+.pillar .p-icon{width:44px;height:44px;background:var(--ink);color:var(--bg);border:var(--line);display:grid;place-items:center;flex-shrink:0}
+.pillar .p-icon .ico{color:var(--bg)}
+.pillar h3{font-size:26px;letter-spacing:-1px}
+.pillar > p{font-size:15px;margin-bottom:14px;font-weight:500}
+.pillar ul{list-style:none;margin-top:14px}
+.pillar li{padding:10px 0;font-size:15px;display:flex;gap:10px;border-bottom:1px dashed var(--ink);align-items:flex-start}
+.pillar li:last-child{border-bottom:none}
+.pillar li .ico-sm{color:var(--accent);margin-top:3px}
+.pillar:nth-child(2){background:var(--yellow)}
+.pillar:nth-child(3){background:var(--lime)}
+.pillar:nth-child(4){background:#fff}
+@media(max-width:820px){.pillars{grid-template-columns:1fr}}
+.method-band{background:var(--ink);color:var(--bg);border-bottom:var(--line-thick)}
+.method-band .section-head h2{color:var(--bg)}
+.method-band .tag{background:var(--accent);color:#fff}
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:var(--line-thick);border-color:var(--bg)}
+.tl-cell{padding:24px;background:#151515;color:var(--bg);position:relative;min-height:240px;border-right:2px solid var(--bg)}
+.tl-cell:last-child{border-right:none}
+.tl-cell .m{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:12px}
+.tl-icon{width:44px;height:44px;background:var(--yellow);color:var(--ink);border:2px solid var(--bg);display:grid;place-items:center;margin-bottom:14px}
+.tl-icon .ico{color:var(--ink);width:24px;height:24px}
+.tl-cell .step{font-family:'Archivo Black',sans-serif;font-size:36px;line-height:.9;color:var(--yellow);margin-bottom:8px;letter-spacing:-1.5px}
+.tl-cell h4{font-size:16px;color:var(--bg);margin-bottom:6px;letter-spacing:-.3px}
+.tl-cell p{font-size:13px;color:#c6c6c6}
+@media(max-width:1000px){.timeline{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.timeline{grid-template-columns:repeat(2,1fr)}}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.result{background:#fff;border:var(--line-thick);box-shadow:var(--shadow-lg);padding:28px;position:relative}
+.result:nth-child(1){background:var(--accent);color:#fff}
+.result:nth-child(1) *{color:#fff}
+.result:nth-child(2){background:var(--yellow)}
+.result:nth-child(3){background:var(--blue);color:#fff}
+.result:nth-child(3) *{color:#fff}
+.result .r-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.result .r-icon{width:48px;height:48px;background:var(--ink);border:var(--line);display:grid;place-items:center}
+.result .r-icon .ico{color:var(--bg)}
+.result .kpi{font-family:'Archivo Black',sans-serif;font-size:82px;line-height:.9;letter-spacing:-4px}
+.result .kpi-lbl{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:8px 0 18px}
+.result p{font-size:15px;margin-bottom:20px}
+.result .who{border-top:var(--line);padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.result:nth-child(1) .who,.result:nth-child(3) .who{border-color:rgba(255,255,255,.4)}
+@media(max-width:900px){.results-grid{grid-template-columns:1fr}}
+.quote{background:var(--yellow);border:var(--line-thick);box-shadow:var(--shadow-lg);padding:48px 48px 40px 60px;margin-top:40px;position:relative}
+.quote::before{content:"“";position:absolute;top:-40px;left:20px;font-family:'Archivo Black',serif;font-size:180px;line-height:1;color:var(--ink)}
+.quote p{font-family:'Archivo Black',sans-serif;font-size:26px;line-height:1.15;letter-spacing:-1px;text-transform:uppercase}
+.quote .cite{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:1px}
+@media(max-width:600px){.quote{padding:44px 24px 32px}.quote p{font-size:20px}}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.faq{background:#fff;border:var(--line-thick);box-shadow:var(--shadow);padding:24px;display:flex;gap:16px}
+.faq .q-icon{width:44px;height:44px;background:var(--yellow);border:var(--line);display:grid;place-items:center;flex-shrink:0}
+.faq h4{font-size:19px;margin-bottom:8px;letter-spacing:-.5px}
+.faq p{font-size:15px}
+@media(max-width:820px){.faq-grid{grid-template-columns:1fr}}
+.cta-band{background:var(--lime);border-bottom:var(--line-thick);padding:100px 0;text-align:center;position:relative}
+.cta-band h2{font-size:clamp(48px,9vw,120px);letter-spacing:-4px;margin-bottom:24px}
+.cta-band p{font-size:20px;max-width:640px;margin:0 auto 32px;font-weight:500}
+footer{background:var(--ink);color:var(--bg);padding:40px 24px 24px}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer a{color:var(--yellow)}
+.mobile-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--accent);color:#fff;border-top:var(--line-thick);padding:12px 16px;display:none;align-items:center;justify-content:space-between;gap:12px}
+.mobile-cta .btn{padding:12px 18px;font-size:14px}
+@media(max-width:820px){.mobile-cta{display:flex}body{padding-bottom:78px}}
+.modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(11,11,11,.85);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:32px 16px;overflow-y:auto}
+.modal-overlay.open{display:flex;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{width:100%;max-width:720px;background:var(--bg);border:var(--line-thick);box-shadow:12px 12px 0 var(--accent);position:relative;animation:popIn .3s ease;margin-top:20px;margin-bottom:40px}
+@keyframes popIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:-2px;right:-2px;width:48px;height:48px;background:var(--ink);color:#fff;border:var(--line-thick);display:grid;place-items:center;cursor:pointer;z-index:2}
+.modal-close:hover{background:var(--accent)}
+.modal-close .ico{color:#fff;width:22px;height:22px;stroke-width:3}
+.exit-banner{background:var(--yellow);color:var(--ink);padding:14px 28px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1.5px;text-align:center;border-bottom:var(--line-thick);display:none}
+.modal-overlay.exit .exit-banner{display:block}
+.modal-header{padding:22px 28px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.m-title{font-family:'Archivo Black',sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+.m-title .ico{color:var(--lime)}
+.m-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#c6c6c6}
+.m-meta b{color:var(--lime)}
+.checkpoints{background:var(--ink);padding:0 28px 20px;display:flex;gap:8px;border-bottom:var(--line-thick)}
+.cp{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative}
+.cp .cp-dot{width:28px;height:28px;background:#333;color:#666;border:2px solid #333;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;transition:all .3s}
+.cp .cp-dot .ico-sm{color:currentColor;width:14px;height:14px}
+.cp .cp-label{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;transition:color .3s;text-align:center}
+.cp.done .cp-dot{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.cp.done .cp-label{color:var(--lime)}
+.cp.active .cp-dot{background:var(--accent);color:#fff;border-color:var(--accent);transform:scale(1.15)}
+.cp.active .cp-label{color:#fff}
+.cp:not(:last-child)::after{content:"";position:absolute;top:14px;left:calc(50% + 16px);right:calc(-50% + 16px);height:2px;background:#333;z-index:0}
+.cp.done:not(:last-child)::after{background:var(--lime)}
+@media(max-width:640px){.cp .cp-label{display:none}}
+.progress-wrap{height:8px;background:#111}
+.progress-bar{height:100%;background:var(--lime);width:0%;transition:width .35s ease}
+.modal-body{padding:28px;background:var(--bg);max-height:60vh;overflow-y:auto}
+.step{display:none}
+.step.active{display:block;animation:stepIn .3s ease}
+@keyframes stepIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.q-icon{width:40px;height:40px;background:var(--accent);color:#fff;border:var(--line);display:grid;place-items:center;flex-shrink:0}
+.q-icon .ico{color:#fff;width:22px;height:22px}
+.q-num{display:inline-block;background:var(--ink);color:var(--bg);padding:3px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:4px}
+.q-title{font-size:clamp(20px, 2.5vw, 26px);letter-spacing:-.8px;line-height:1.1}
+.q-hint{font-size:13px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;color:#555}
+.options{display:grid;gap:10px;grid-template-columns:1fr 1fr;margin-top:18px}
+.options.one-col{grid-template-columns:1fr}
+.opt{border:var(--line-thick);background:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:600;font-size:14.5px;box-shadow:3px 3px 0 var(--ink);transition:transform .1s, box-shadow .1s, background .15s;user-select:none}
+.opt:hover{background:var(--yellow);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.opt input{accent-color:var(--accent);width:18px;height:18px;flex-shrink:0}
+.opt.selected{background:var(--lime);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.opt .opt-emoji{font-size:18px;flex-shrink:0;line-height:1}
+.opt-txt{flex:1}
+@media(max-width:640px){.options{grid-template-columns:1fr}}
+.text-input{width:100%;border:var(--line-thick);background:#fff;padding:13px 15px 13px 42px;font-size:15px;font-family:'Space Grotesk',sans-serif;box-shadow:3px 3px 0 var(--ink)}
+.text-input:focus{outline:none;background:var(--yellow)}
+.input-wrap{position:relative}
+.input-wrap .in-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink);pointer-events:none;width:20px;height:20px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.field-row{grid-template-columns:1fr}}
+.field{margin-bottom:14px}
+.field label{display:flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.field label .ico-sm{color:var(--accent)}
+.privacy{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;margin-top:8px;background:var(--ink);color:var(--bg);padding:8px 12px}
+.privacy .ico-sm{color:var(--lime)}
+.modal-footer{padding:16px 28px;background:#eae5d8;border-top:var(--line-thick);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.counter{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1.5px}
+.counter b{color:var(--accent)}
+.modal-footer .btn{padding:12px 20px;font-size:13px;box-shadow:4px 4px 0 var(--ink)}
+.modal-footer .btn:hover{box-shadow:6px 6px 0 var(--ink)}
+.err{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 12px;margin-top:12px;display:none;font-weight:700;letter-spacing:.5px}
+.err.show{display:block}
+.hidden{display:none !important}
+.done{padding:48px 28px;text-align:center;background:var(--lime)}
+.done .badge{width:80px;height:80px;background:var(--ink);color:var(--lime);border:var(--line-thick);box-shadow:var(--shadow);display:grid;place-items:center;margin:0 auto 20px}
+.done .badge .ico{color:var(--lime);width:44px;height:44px;stroke-width:3}
+.done h3{font-size:34px;margin-bottom:12px;letter-spacing:-1px}
+.done p{max-width:520px;margin:0 auto 20px;font-size:15px}
+.done-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:24px auto 8px;max-width:560px}
+.done-card{background:var(--ink);color:var(--bg);border:var(--line-thick);padding:14px 10px;box-shadow:4px 4px 0 rgba(0,0,0,.35)}
+.done-card .dc-ico{color:var(--lime);margin:0 auto 6px}
+.done-card .dc-t{font-family:'Archivo Black',sans-serif;font-size:13px;letter-spacing:-.3px;color:#fff}
+.done-card .dc-s{font-family:'JetBrains Mono',monospace;font-size:9px;color:#aaa;margin-top:2px;letter-spacing:1px}
+@media(max-width:640px){.done-cards{grid-template-columns:1fr}}
+.modal-overlay.exit .modal{box-shadow:12px 12px 0 var(--yellow)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-4 9-8 10-4-1-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l3 6 6 1-4.5 4.5L18 21l-6-3-6 3 1.5-6.5L3 10l6-1z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><circle cx="17" cy="7" r="3"/><path d="M17 13c3 0 5 2 5 5"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+    <symbol id="i-brand" viewBox="0 0 24 24"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/><circle cx="12" cy="14" r="2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-8 11-8 11-.5 0-1 0-2 0z"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-8 8-8s8 3.5 8 8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 22 2 14 2 6c0-1 1-2 3-2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 0 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16"/><path d="M3 9h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4.5 2.6c-.9.5-1.5 1.1-1.5 2.4"/><circle cx="12" cy="17" r=".5" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3s5 4 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4-1 3 3 3 3 0 0-3-3-4 0-5z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 4v17"/><path d="M4 4h13l-2 4 2 4H4"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5"/><circle cx="12" cy="18" r=".5" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V8M10 20V4M16 20v-8M22 20H2"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-money" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><circle cx="12" cy="12" r="3"/><path d="M6 9v6M18 9v6"/></symbol>
+    <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12M7 3v4c0 3 4 4 5 5s-5 2-5 5v4M17 3v4c0 3-4 4-5 5s5 2 5 5v4"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 3c4 4 5 8 5 11l-5 3-5-3c0-3 1-7 5-11z"/><circle cx="12" cy="10" r="2"/><path d="M9 17l-3 4M15 17l3 4"/></symbol>
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14"/><path d="M10 21v-6h4v6M12 8v4M10 10h4"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M7 8l-4 8h8zM17 8l-4 8h8zM7 8h10"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><svg class="ico" style="width:18px;height:18px;color:#fff"><use href="#i-heart"/></svg></span>
+      <span>WhiteCoat/Media</span>
+    </a>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#" class="nav-cta" data-open-modal>APPLY <svg class="ico" style="width:14px;height:14px"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+<div class="urgency">
+  <svg class="ico" style="width:18px;height:18px;color:var(--accent)"><use href="#i-fire"/></svg>
+  <span>ONLY <b>4 SEATS LEFT</b> — Q4 2026 COHORT</span>
+  <span class="mono">// CLOSES FRIDAY // DOCTORS ONLY</span>
+</div>
+
+<header class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="tag"><svg class="ico" style="width:14px;height:14px;color:#fff"><use href="#i-target"/></svg> 6-MONTH DOCTOR BRANDING SYSTEM</span>
+      <h1>STOP BEING THE <span class="strike">BEST</span> <span class="u">BEST-KEPT</span> SECRET IN MEDICINE.</h1>
+      <p class="hero-sub">You're the best doctor your patients never found. In <b>6 months</b>, we build the brand, the visibility, and the systems that finally match your skill — so the right patients search your name, trust you before they meet you, and book on your terms.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-accent" data-open-modal><svg class="ico"><use href="#i-doc"/></svg> GET MY ROADMAP <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="#method" class="btn btn-ghost"><svg class="ico"><use href="#i-eye"/></svg> SEE THE METHOD</a>
+      </div>
+      <div class="hero-meta">
+        <div><svg class="ico"><use href="#i-clock"/></svg> REPLIES IN &lt;24H</div>
+        <div><svg class="ico"><use href="#i-heart"/></svg> DOCTORS-ONLY AGENCY</div>
+        <div><svg class="ico"><use href="#i-shield"/></svg> NO CONTRACTS</div>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="stat-card"><svg class="ico ico-xl"><use href="#i-trend"/></svg><div><div class="big">3.4×</div><div class="lbl">Avg New-Patient Growth</div></div></div>
+      <div class="stat-card"><svg class="ico ico-xl"><use href="#i-users"/></svg><div><div class="big">180+</div><div class="lbl">Doctors Transformed</div></div></div>
+      <div class="stat-card"><svg class="ico ico-xl"><use href="#i-star"/></svg><div><div class="big">96%</div><div class="lbl">Renewal Rate After M6</div></div></div>
+    </aside>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>PERSONAL BRAND</span><span>PATIENT GROWTH</span><span>REPUTATION</span><span>SYSTEMS</span>
+    <span>PERSONAL BRAND</span><span>PATIENT GROWTH</span><span>REPUTATION</span><span>SYSTEMS</span>
+  </div>
+</div>
+
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="tag"><svg class="ico" style="width:14px;height:14px;color:#fff"><use href="#i-alert"/></svg> 01 / THE HARD TRUTH</span>
+        <h2 style="margin-top:16px">You're not short on skill.<br/>You're short on <span style="background:var(--accent);color:#fff;padding:0 8px;">visibility.</span></h2>
+      </div>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-cell"><div class="p-head"><div class="p-icon"><svg class="ico"><use href="#i-search"/></svg></div><div><span class="n">01</span><h3>Referrals dried up.</h3></div></div><p>Patients don't ask friends anymore. They Google. If you're not there, you don't exist.</p></div>
+      <div class="problem-cell"><div class="p-head"><div class="p-icon"><svg class="ico"><use href="#i-x"/></svg></div><div><span class="n">02</span><h3>Random posting isn't strategy.</h3></div></div><p>A reel here. A story there. Your "marketing" is a graveyard of one-offs — costing you six figures a year.</p></div>
+      <div class="problem-cell"><div class="p-head"><div class="p-icon"><svg class="ico"><use href="#i-alert"/></svg></div><div><span class="n">03</span><h3>Agencies burned you.</h3></div></div><p>Generic templates. No healthcare context. No results. You need people who actually understand medicine.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="tag" style="background:var(--lime);color:var(--ink)"><svg class="ico" style="width:14px;height:14px"><use href="#i-bolt"/></svg> 02 / WHAT WE BUILD</span>
+        <h2 style="margin-top:16px">Four systems.<br/>One unfair advantage.</h2>
+      </div>
+      <p style="max-width:400px;font-size:16px">No influencer nonsense. No vanity metrics. Just the four systems every serious medical practice needs — installed, tuned, and handed over.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="p-top"><div class="num">01</div><div class="p-icon"><svg class="ico"><use href="#i-brand"/></svg></div><h3>PERSONAL BRAND</h3></div><p>Turn "just another doctor" into the name patients trust before they book.</p><ul><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Positioning that separates you from competition</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Story-driven content pillars in your voice</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Professional photo + video shoot</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Bio, website & social identity — locked</li></ul></div>
+      <div class="pillar"><div class="p-top"><div class="num">02</div><div class="p-icon"><svg class="ico"><use href="#i-trend"/></svg></div><h3>PATIENT GROWTH</h3></div><p>Predictable inquiries every week. Not "hope marketing."</p><ul><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Google search dominance (SEO + Ads)</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Instagram + YouTube authority engine</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Landing pages built to convert cold traffic</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Lead nurture that books consults on autopilot</li></ul></div>
+      <div class="pillar"><div class="p-top"><div class="num">03</div><div class="p-icon"><svg class="ico"><use href="#i-star"/></svg></div><h3>REPUTATION</h3></div><p>Reviews and testimonials that do the selling for you — while you sleep.</p><ul><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Automated review request loops</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Video testimonial capture system</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> PR + authority placements</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Crisis-proof reputation dashboard</li></ul></div>
+      <div class="pillar"><div class="p-top"><div class="num">04</div><div class="p-icon"><svg class="ico"><use href="#i-gear"/></svg></div><h3>PRACTICE SYSTEMS</h3></div><p>Growth that scales without stealing your evenings.</p><ul><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Lead capture + CRM setup</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Front-desk conversion scripts</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> Weekly KPI dashboard</li><li><svg class="ico ico-sm"><use href="#i-check"/></svg> SOPs your team actually follows</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="method-band section" id="method">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="tag"><svg class="ico" style="width:14px;height:14px;color:#fff"><use href="#i-calendar"/></svg> 03 / THE 6-MONTH METHOD</span>
+        <h2 style="margin-top:16px">Not consulting.<br/>Not another agency.<br/>A transformation.</h2>
+      </div>
+      <p style="color:#c6c6c6;max-width:420px;font-size:16px">Every month has one outcome. Every outcome compounds. By Month 6, you own a growth machine — not a subscription.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-cell"><div class="m">MONTH 01</div><div class="tl-icon"><svg class="ico"><use href="#i-search"/></svg></div><div class="step">01</div><h4>AUDIT & STRATEGY</h4><p>We tear down brand, funnel, competitors, hidden opportunities. You get the map.</p></div>
+      <div class="tl-cell"><div class="m">MONTH 02</div><div class="tl-icon"><svg class="ico"><use href="#i-brand"/></svg></div><div class="step">02</div><h4>BRAND & ASSETS</h4><p>Positioning locked. Identity built. Photoshoot done. You finally look the part.</p></div>
+      <div class="tl-cell"><div class="m">MONTH 03</div><div class="tl-icon"><svg class="ico"><use href="#i-bolt"/></svg></div><div class="step">03</div><h4>VISIBILITY LAUNCH</h4><p>Google. Meta. YouTube. All firing. Patients start finding you — not the other way around.</p></div>
+      <div class="tl-cell"><div class="m">MONTH 04</div><div class="tl-icon"><svg class="ico"><use href="#i-star"/></svg></div><div class="step">04</div><h4>TRUST ENGINE</h4><p>Reviews snowball. Testimonials pile up. PR lands. Trust becomes your moat.</p></div>
+      <div class="tl-cell"><div class="m">MONTH 05</div><div class="tl-icon"><svg class="ico"><use href="#i-trend"/></svg></div><div class="step">05</div><h4>OPTIMIZE & SCALE</h4><p>Double-down on winners. Kill the losers. ROI curve goes vertical.</p></div>
+      <div class="tl-cell"><div class="m">MONTH 06</div><div class="tl-icon"><svg class="ico"><use href="#i-flag"/></svg></div><div class="step">06</div><h4>HANDOVER</h4><p>You own the playbook. The team. The dashboard. The compounding engine.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="tag" style="background:var(--blue);color:#fff"><svg class="ico" style="width:14px;height:14px;color:#fff"><use href="#i-chart"/></svg> 04 / PROOF, NOT PROMISES</span>
+        <h2 style="margin-top:16px">Real doctors.<br/>Real numbers.<br/>Six months.</h2>
+      </div>
+    </div>
+    <div class="results-grid">
+      <div class="result"><div class="r-top"><div class="r-icon"><svg class="ico"><use href="#i-trend"/></svg></div></div><div class="kpi">+312%</div><div class="kpi-lbl">CONSULT BOOKINGS</div><p>Went from 40 to 165 monthly consults. Instagram authority + local SEO stack did the heavy lifting.</p><div class="who">DR. A. — DERMATOLOGIST // MUMBAI</div></div>
+      <div class="result"><div class="r-top"><div class="r-icon"><svg class="ico"><use href="#i-star"/></svg></div></div><div class="kpi">4.9★</div><div class="kpi-lbl">GOOGLE REPUTATION</div><p>32 reviews → 480+ reviews in 6 months. Trust score now beats every competitor in a 10km radius.</p><div class="who">DR. P. — COSMETIC DENTIST // BENGALURU</div></div>
+      <div class="result"><div class="r-top"><div class="r-icon"><svg class="ico"><use href="#i-target"/></svg></div></div><div class="kpi">2.1×</div><div class="kpi-lbl">AVG CASE VALUE</div><p>Repositioned from "local ortho" to "regional expert." Higher tickets. Fewer, better patients. Zero burnout.</p><div class="who">DR. R. — ORTHO SURGEON // DUBAI</div></div>
+    </div>
+    <div class="quote">
+      <p>They didn't just market me. They built me a business I actually want to run.</p>
+      <div class="cite">— DR. S. // AESTHETIC PHYSICIAN // 6-MONTH CLIENT</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="tag"><svg class="ico" style="width:14px;height:14px;color:#fff"><use href="#i-question"/></svg> 05 / OBJECTIONS, HANDLED</span>
+        <h2 style="margin-top:16px">Questions serious doctors ask.</h2>
+      </div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq"><div class="q-icon"><svg class="ico"><use href="#i-question"/></svg></div><div><h4>How is this different from an agency?</h4><p>Agencies post. We build. We treat your practice like an asset — with strategy, systems, and skin in the game. Every deliverable ties to patient revenue.</p></div></div>
+      <div class="faq"><div class="q-icon"><svg class="ico"><use href="#i-clock"/></svg></div><div><h4>Why 6 months? Can't we do 3?</h4><p>Brand + SEO + reputation compound. 3 months buys you activity. 6 months buys you a machine you own forever.</p></div></div>
+      <div class="faq"><div class="q-icon"><svg class="ico"><use href="#i-camera"/></svg></div><div><h4>Do I have to be on camera?</h4><p>Yes. Patients trust faces, not clinics. But we make it painless — one shoot, months of content, zero awkwardness.</p></div></div>
+      <div class="faq"><div class="q-icon"><svg class="ico"><use href="#i-shield"/></svg></div><div><h4>What if it doesn't work?</h4><p>We only take doctors we're confident we can move. That's why we qualify hard. Weekly KPIs — no hiding.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>YOUR PRACTICE.<br/>SIX MONTHS.<br/>ZERO EXCUSES.</h2>
+    <p>Applications close Friday. Four seats left in the Q4 2026 cohort. If you know your clinic is capable of more — this is the fork in the road.</p>
+    <a href="#" class="btn btn-accent" data-open-modal><svg class="ico"><use href="#i-doc"/></svg> APPLY NOW <svg class="ico"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div><div style="font-family:'Archivo Black',sans-serif;font-size:20px;letter-spacing:-.5px">WHITECOAT/MEDIA</div><div class="mono" style="color:#aaa;margin-top:6px;font-size:12px;letter-spacing:2px">BUILT EXCLUSIVELY FOR DOCTORS © 2026</div></div>
+    <div class="mono" style="font-size:12px;letter-spacing:2px"><a href="#">PRIVACY</a> · <a href="#">CONTACT</a> · <a href="#" data-open-modal>APPLY</a></div>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <div style="font-family:'Archivo Black',sans-serif;font-size:14px;line-height:1.1;display:flex;align-items:center;gap:8px">
+    <svg class="ico" style="width:20px;height:20px;color:#fff"><use href="#i-fire"/></svg>
+    <div>4 SEATS LEFT<br/><span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:400">Q4 2026 COHORT</span></div>
+  </div>
+  <a href="#" class="btn btn-lime" data-open-modal>APPLY <svg class="ico"><use href="#i-arrow"/></svg></a>
+</div>
+
+<!-- ============ MODAL FORM ============ -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal-close" aria-label="Close" id="modalClose"><svg class="ico"><use href="#i-x"/></svg></button>
+    <div class="exit-banner">⚡ WAIT — GRAB YOUR FREE ROADMAP BEFORE YOU LEAVE</div>
+    <div class="modal-header">
+      <div class="m-title" id="modalTitle"><svg class="ico"><use href="#i-doc"/></svg> DOCTOR QUALIFICATION</div>
+      <div class="m-meta">SECTION <b id="cpLabel">01</b> / 06</div>
+    </div>
+    <div class="checkpoints" id="checkpoints">
+      <div class="cp" data-cp="0"><div class="cp-dot"><svg class="ico ico-sm"><use href="#i-user"/></svg></div><div class="cp-label">YOU</div></div>
+      <div class="cp" data-cp="1"><div class="cp-dot"><svg class="ico ico-sm"><use href="#i-briefcase"/></svg></div><div class="cp-label">PRACTICE</div></div>
+      <div class="cp" data-cp="2"><div class="cp-dot"><svg class="ico ico-sm"><use href="#i-eye"/></svg></div><div class="cp-label">VISIBILITY</div></div>
+      <div class="cp" data-cp="3"><div class="cp-dot"><svg class="ico ico-sm"><use href="#i-heart"/></svg></div><div class="cp-label">HISTORY</div></div>
+      <div class="cp" data-cp="4"><div class="cp-dot"><svg class="ico ico-sm"><use href="#i-money"/></svg></div><div class="cp-label">FIT</div></div>
+      <div class="cp" data-cp="5"><div class="cp-dot"><svg class="ico ico-sm"><use href="#i-flag"/></svg></div><div class="cp-label">COMMIT</div></div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter">
+      <button type="button" class="btn btn-ghost" id="prevBtn"><svg class="ico"><use href="#i-arrow-l"/></svg> BACK</button>
+      <div class="counter">Q <b id="counterNow">1</b> / <span id="counterTotal">26</span></div>
+      <button type="button" class="btn btn-accent" id="nextBtn">NEXT <svg class="ico"><use href="#i-arrow"/></svg></button>
+      <button type="button" class="btn btn-lime hidden" id="submitBtn"><svg class="ico"><use href="#i-check"/></svg> SUBMIT</button>
+    </div>
+    <div class="done hidden" id="doneScreen">
+      <div class="badge"><svg class="ico"><use href="#i-check"/></svg></div>
+      <h3>APPLICATION LOCKED IN.</h3>
+      <p>Our senior strategist personally reviews every submission. If you're a strong fit for the Q4 2026 cohort, expect a WhatsApp or email within 24 hours with your tailored 6-month roadmap.</p>
+      <div class="done-cards">
+        <div class="done-card"><svg class="ico dc-ico"><use href="#i-clock"/></svg><div class="dc-t">&lt; 24 HRS</div><div class="dc-s">RESPONSE TIME</div></div>
+        <div class="done-card"><svg class="ico dc-ico"><use href="#i-mail"/></svg><div class="dc-t">INBOX</div><div class="dc-s">CHECK EMAIL + WHATSAPP</div></div>
+        <div class="done-card"><svg class="ico dc-ico"><use href="#i-lock"/></svg><div class="dc-t">PRIVATE</div><div class="dc-s">100% CONFIDENTIAL</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   FORM CONFIG
+   Sections: 0=YOU, 1=PRACTICE, 2=VISIBILITY, 3=HISTORY, 4=FIT($), 5=COMMIT
+   Scoring is INTERNAL ONLY — never shown to the user
+   ============================================================ */
+const STEPS = [
+  // ============ SECTION 0: YOU (contact) ============
+  { type:'contact', section:0, icon:'i-user', tag:'START HERE',
+    title:'First — who are we talking to?',
+    hint:'// We reply personally. No bots. No spam. Ever.' },
+
+  // ============ SECTION 1: PRACTICE ============
+  { type:'radio', section:1, key:'q1_years', icon:'i-clock', tag:'Q 01',
+    title:'How long have you been practicing?',
+    options:[
+      {label:'Just Started', score:1, emoji:'🌱'},
+      {label:'3–5 Years', score:3, emoji:'📈'},
+      {label:'5–10 Years', score:5, emoji:'🎯'},
+      {label:'10–20 Years', score:5, emoji:'🏆'},
+      {label:'20+ Years', score:4, emoji:'👑'} ]},
+  { type:'radio', section:1, key:'q2_role', icon:'i-briefcase', tag:'Q 02',
+    title:'Which best describes you?',
+    options:[
+      {label:'I own my clinic', score:5, emoji:'🏥'},
+      {label:'I work in multiple hospitals', score:3, emoji:'🏨'},
+      {label:'I own multiple clinics', score:5, emoji:'🏢'},
+      {label:'I run a hospital', score:5, emoji:'🏛️'} ]},
+
+  // CRITICAL: revenue
+  { type:'radio', section:1, key:'qC1_revenue', icon:'i-money', tag:'Q 03',
+    title:'What is your current monthly clinic revenue?',
+    hint:'// Kept 100% confidential. Helps us build the right roadmap.',
+    options:[
+      {label:'Under ₹2 Lakhs / mo', score:1, emoji:'🌱'},
+      {label:'₹2–5 Lakhs / mo', score:3, emoji:'📊'},
+      {label:'₹5–10 Lakhs / mo', score:5, emoji:'📈'},
+      {label:'₹10–25 Lakhs / mo', score:5, emoji:'💰'},
+      {label:'₹25 Lakhs+ / mo', score:5, emoji:'💎'},
+      {label:"Prefer not to say", score:2, emoji:'🤐'} ]},
+
+  // CRITICAL: decision authority
+  { type:'radio', section:1, key:'qC2_authority', icon:'i-scale', tag:'Q 04',
+    title:'Who makes the final call on marketing decisions in your practice?',
+    options:[
+      {label:'I decide alone', score:5, emoji:'👤'},
+      {label:'Me + my spouse/partner', score:4, emoji:'👥'},
+      {label:'Me + business partner(s)', score:4, emoji:'🤝'},
+      {label:'Hospital / board approval needed', score:2, emoji:'🏛️'} ]},
+
+  // ============ SECTION 2: VISIBILITY ============
+  { type:'radio', section:2, key:'q3_google', icon:'i-search', tag:'Q 05',
+    title:'When a patient Googles your name…',
+    options:[
+      {label:"They'll definitely find me", score:2, emoji:'✅'},
+      {label:"They'll find something", score:3, emoji:'🤷'},
+      {label:"I'm not sure", score:4, emoji:'😬'},
+      {label:'I never checked', score:5, emoji:'🙈'} ]},
+  { type:'radio', section:2, key:'q4_source', icon:'i-users', tag:'Q 06',
+    title:'Where do most of your patients come from?',
+    options:[
+      {label:'Mostly referrals', score:3, emoji:'🤝'},
+      {label:'Google search', score:2, emoji:'🔍'},
+      {label:'Instagram is helping', score:2, emoji:'📱'},
+      {label:"Honestly, I don't know", score:5, emoji:'❓'} ]},
+  { type:'radio', section:2, key:'q5_social', icon:'i-camera', tag:'Q 07',
+    title:'How often do you post on social media?',
+    options:[
+      {label:'Almost every day', score:2, emoji:'🔥'},
+      {label:'Weekly', score:3, emoji:'📅'},
+      {label:'Sometimes', score:4, emoji:'🌙'},
+      {label:'My last post deserves a museum', score:5, emoji:'🏺'} ]},
+  { type:'radio', section:2, key:'q6_marketing', icon:'i-user', tag:'Q 08',
+    title:'Who currently handles your marketing?',
+    options:[
+      {label:'Nobody', score:5, emoji:'👻'},
+      {label:'Me', score:4, emoji:'🧑‍⚕️'},
+      {label:'Receptionist', score:4, emoji:'📞'},
+      {label:'Freelancer', score:3, emoji:'💻'},
+      {label:'Agency', score:2, emoji:'🏢'},
+      {label:'In-house Team', score:2, emoji:'👥'} ]},
+
+  // CRITICAL: current patient volume
+  { type:'radio', section:2, key:'qC3_patients', icon:'i-users', tag:'Q 09',
+    title:'How many new patients do you see per month right now?',
+    options:[
+      {label:'Under 20', score:3, emoji:'🌱'},
+      {label:'20–50', score:4, emoji:'📊'},
+      {label:'50–100', score:5, emoji:'📈'},
+      {label:'100–200', score:5, emoji:'🔥'},
+      {label:'200+', score:5, emoji:'🚀'} ]},
+
+  // CRITICAL: current marketing spend
+  { type:'radio', section:2, key:'qC4_spend', icon:'i-chart', tag:'Q 10',
+    title:'How much do you invest in marketing per month currently?',
+    hint:'// This helps us assess your baseline.',
+    options:[
+      {label:'Nothing / very little', score:3, emoji:'❌'},
+      {label:'Under ₹25K / mo', score:3, emoji:'💵'},
+      {label:'₹25K – ₹75K / mo', score:5, emoji:'💰'},
+      {label:'₹75K – ₹1.5L / mo', score:5, emoji:'💎'},
+      {label:'₹1.5L+ / mo', score:5, emoji:'👑'} ]},
+
+  // ============ SECTION 3: HISTORY ============
+  { type:'radio', section:3, key:'q7_worked_agency', icon:'i-briefcase', tag:'Q 11',
+    title:'Ever worked with a marketing agency?',
+    branch:true,
+    options:[
+      {label:'Yes', score:3, emoji:'✅'},
+      {label:'No', score:3, emoji:'❌'} ]},
+  { type:'radio', section:3, key:'q8_experience', icon:'i-heart', tag:'Q 12',
+    title:'How was your experience?',
+    hint:'// Only shown because you answered YES above',
+    dependsOn:{ key:'q7_worked_agency', value:'Yes' },
+    options:[
+      {label:'Excellent', score:1, emoji:'😍'},
+      {label:'Good', score:2, emoji:'🙂'},
+      {label:'Average', score:3, emoji:'😐'},
+      {label:'Disappointing', score:4, emoji:'😕'},
+      {label:'Never Again', score:5, emoji:'😭'} ]},
+  { type:'checkbox', section:3, key:'q9_disappointed', icon:'i-alert', tag:'Q 13',
+    title:'What disappointed you the most?',
+    hint:'// Select all that apply',
+    dependsOn:{ key:'q7_worked_agency', value:'Yes' },
+    options:[
+      {label:'No Results', score:1, emoji:'📉'},
+      {label:'Poor Communication', score:1, emoji:'📵'},
+      {label:'Random Posting', score:1, emoji:'🎲'},
+      {label:'No Strategy', score:1, emoji:'🗺️'},
+      {label:"Didn't Understand Healthcare", score:1, emoji:'🩺'},
+      {label:"Didn't Deliver", score:1, emoji:'📦'} ]},
+
+  // ============ SECTION 4: FIT ($ + goals + timing) ============
+  // Q10 (Aspiration / vision)
+  { type:'radio', section:4, key:'qC5_vision', icon:'i-rocket', tag:'Q 14',
+    title:'Where do you want your practice to be in 12 months?',
+    options:[
+      {label:'2× my current revenue', score:5, emoji:'📈'},
+      {label:'A recognized brand in my city', score:5, emoji:'🏆'},
+      {label:'Multi-location / expansion', score:5, emoji:'🏢'},
+      {label:'Just more consistent inquiries', score:4, emoji:'📊'},
+      {label:"Honestly, I'm not sure yet", score:2, emoji:'🤔'} ]},
+
+  // Q11 (Timeline urgency)
+  { type:'radio', section:4, key:'qC6_timeline', icon:'i-hourglass', tag:'Q 15',
+    title:'How soon do you want to start seeing results?',
+    options:[
+      {label:'ASAP — I\'m ready to start now', score:5, emoji:'🔥'},
+      {label:'Within 30 days', score:5, emoji:'⚡'},
+      {label:'Within 2–3 months', score:3, emoji:'📅'},
+      {label:'Just exploring for now', score:1, emoji:'👀'} ]},
+
+  // Q12 (Investment readiness — the money question)
+  { type:'radio', section:4, key:'qC7_budget', icon:'i-money', tag:'Q 16',
+    title:'Our 6-month program is a serious investment. What budget range are you comfortable with?',
+    hint:'// Honest answers = honest fit. There\'s no wrong answer.',
+    options:[
+      {label:'Under ₹1 Lakh / mo', score:1, emoji:'🌱'},
+      {label:'₹1–2 Lakhs / mo', score:3, emoji:'💵'},
+      {label:'₹2–4 Lakhs / mo', score:5, emoji:'💰'},
+      {label:'₹4 Lakhs+ / mo', score:5, emoji:'💎'},
+      {label:"I need to understand the ROI first", score:3, emoji:'⚖️'} ]},
+
+  // Q13 (Biggest bottleneck)
+  { type:'checkbox', section:4, key:'qC8_bottleneck', icon:'i-alert', tag:'Q 17',
+    title:'What is your biggest bottleneck right now?',
+    hint:'// Select all that apply.',
+    options:[
+      {label:'Not enough new patients', score:2, emoji:'👥'},
+      {label:'Wrong type of patients', score:2, emoji:'🎯'},
+      {label:'Weak brand / no visibility', score:2, emoji:'👁️'},
+      {label:'Poor reviews / reputation', score:2, emoji:'⭐'},
+      {label:'No systems / everything manual', score:2, emoji:'⚙️'},
+      {label:'Team can\'t convert leads', score:2, emoji:'📞'},
+      {label:'Burnout — need to work less', score:2, emoji:'😩'} ]},
+
+  // Q14 (Willingness to be on camera — deal-breaker check)
+  { type:'radio', section:4, key:'qC9_camera', icon:'i-camera', tag:'Q 18',
+    title:'Are you willing to be on camera for content creation?',
+    hint:'// Personal brand = doctor\'s face. This is non-negotiable.',
+    options:[
+      {label:'Yes — I\'m comfortable', score:5, emoji:'📸'},
+      {label:'Yes, but I need coaching', score:4, emoji:'🎬'},
+      {label:'Only occasionally', score:2, emoji:'🤷'},
+      {label:'No — I prefer to stay behind the scenes', score:0, emoji:'🚫'} ]},
+
+  // ============ SECTION 5: COMMIT (Q15–Q20 + 2 more) ============
+  { type:'radio', section:5, key:'q15_involvement', icon:'i-users', tag:'Q 19',
+    title:'How involved do you want to be?',
+    options:[
+      {label:'Handle everything for me', score:5, emoji:'🎯'},
+      {label:'Weekly updates are enough', score:5, emoji:'📊'},
+      {label:'I like reviewing everything', score:3, emoji:'👀'} ]},
+  { type:'radio', section:5, key:'q16_priority', icon:'i-target', tag:'Q 20',
+    title:'What matters more to you?',
+    options:[
+      {label:'More Patients', score:4, emoji:'👥'},
+      {label:'Better Patients', score:5, emoji:'💎'},
+      {label:'Stronger Brand', score:5, emoji:'🏷️'},
+      {label:'Long-Term Growth', score:5, emoji:'📈'} ]},
+  { type:'radio', section:5, key:'q17_mindset', icon:'i-bolt', tag:'Q 21',
+    title:'Which describes your mindset?',
+    options:[
+      {label:'Quick marketing wins', score:2, emoji:'⚡'},
+      {label:'Long-term transformation', score:5, emoji:'🚀'} ]},
+  { type:'radio', section:5, key:'q18_roadmap', icon:'i-doc', tag:'Q 22',
+    title:'If we hand you a complete roadmap — would you implement it?',
+    options:[
+      {label:'Yes, immediately', score:5, emoji:'✅'},
+      {label:'Maybe', score:3, emoji:'🤔'},
+      {label:'Only if it makes sense', score:4, emoji:'⚖️'} ]},
+
+  // CRITICAL: time commitment
+  { type:'radio', section:5, key:'qC10_time', icon:'i-clock', tag:'Q 23',
+    title:'How many hours per week can you commit to this transformation?',
+    hint:'// Content shoots, strategy reviews, approvals.',
+    options:[
+      {label:'2–3 hours', score:5, emoji:'⏱️'},
+      {label:'4–5 hours', score:5, emoji:'📅'},
+      {label:'Less than 2 hours', score:2, emoji:'⚠️'},
+      {label:"I'll make time — this is a priority", score:5, emoji:'🔥'} ]},
+
+  { type:'radio', section:5, key:'q19_serious', icon:'i-flag', tag:'Q 24',
+    title:'Serious about building your practice over the next 6 months?',
+    options:[
+      {label:"Yes — let's go", score:5, emoji:'🔥'},
+      {label:'No — just curious', score:0, emoji:'👋'} ]},
+
+  // CRITICAL: referral / how they heard
+  { type:'radio', section:5, key:'qC11_source', icon:'i-search', tag:'Q 25',
+    title:'How did you hear about WhiteCoat Media?',
+    options:[
+      {label:'Instagram / Social Media', score:3, emoji:'📱'},
+      {label:'Google Search', score:4, emoji:'🔍'},
+      {label:'Referred by another doctor', score:5, emoji:'🤝'},
+      {label:'Podcast / Interview', score:4, emoji:'🎙️'},
+      {label:'Ad', score:3, emoji:'📣'},
+      {label:'Other', score:2, emoji:'❓'} ]},
+
+  { type:'radio', section:5, key:'q20_identity', icon:'i-heart', tag:'Q 26',
+    title:'Final call — which sentence feels most like you today?',
+    options:[
+      {label:'I know my clinic has bigger potential.', score:5, emoji:'💡'},
+      {label:'I need the right team.', score:5, emoji:'🤝'},
+      {label:'I want systems, not random marketing.', score:5, emoji:'⚙️'},
+      {label:"I'm ready to build something bigger.", score:5, emoji:'🚀'} ]}
+];
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const state = {
+  answers: {},
+  cursor: 0,
+  submitted: false
+};
+
+function computeMaxScore(){
+  let max = 0;
+  STEPS.forEach(s=>{
+    if(s.type === 'radio') max += Math.max(...s.options.map(o=>o.score));
+    else if(s.type === 'checkbox') max += s.options.reduce((a,o)=>a+o.score, 0);
+  });
+  return max;
+}
+const MAX_SCORE = computeMaxScore();
+
+function isStepVisible(step){
+  if(!step.dependsOn) return true;
+  return state.answers[step.dependsOn.key] === step.dependsOn.value;
+}
+function visibleIndices(){
+  const arr = [];
+  STEPS.forEach((s,i)=>{ if(isStepVisible(s)) arr.push(i); });
+  return arr;
+}
+function visibleQuestionCount(){
+  return visibleIndices().filter(i=>STEPS[i].type !== 'contact').length;
+}
+function currentQNumber(){
+  const visQs = visibleIndices().filter(i=>STEPS[i].type !== 'contact');
+  const pos = visQs.indexOf(state.cursor);
+  return pos < 0 ? 0 : pos + 1;
+}
+
+/* ============================================================
+   RENDERING
+   ============================================================ */
+const modalBody = document.getElementById('modalBody');
+
+function renderStep(index){
+  const step = STEPS[index];
+  modalBody.innerHTML = '';
+  const wrap = document.createElement('div');
+  wrap.className = 'step active';
+  wrap.dataset.step = index;
+
+  if(step.type === 'contact'){
+    wrap.innerHTML = `
+      <div class="q-head">
+        <div class="q-icon"><svg class="ico"><use href="#${step.icon}"/></svg></div>
+        <div>
+          <span class="q-num">${step.tag}</span>
+          <h3 class="q-title">${step.title}</h3>
+        </div>
+      </div>
+      <p class="q-hint">${step.hint}</p>
+      <div class="field-row">
+        <div class="field"><label><svg class="ico ico-sm"><use href="#i-user"/></svg> FULL NAME *</label>
+          <div class="input-wrap"><svg class="ico in-icon"><use href="#i-user"/></svg>
+            <input class="text-input" type="text" name="full_name" required placeholder="Dr. Jane Smith" value="${escapeAttr(state.answers.full_name||'')}"/></div></div>
+        <div class="field"><label><svg class="ico ico-sm"><use href="#i-briefcase"/></svg> SPECIALTY *</label>
+          <div class="input-wrap"><svg class="ico in-icon"><use href="#i-briefcase"/></svg>
+            <input class="text-input" type="text" name="specialty" required placeholder="e.g., Dermatology" value="${escapeAttr(state.answers.specialty||'')}"/></div></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label><svg class="ico ico-sm"><use href="#i-mail"/></svg> EMAIL *</label>
+          <div class="input-wrap"><svg class="ico in-icon"><use href="#i-mail"/></svg>
+            <input class="text-input" type="email" name="email" required placeholder="you@clinic.com" value="${escapeAttr(state.answers.email||'')}"/></div></div>
+        <div class="field"><label><svg class="ico ico-sm"><use href="#i-phone"/></svg> WHATSAPP *</label>
+          <div class="input-wrap"><svg class="ico in-icon"><use href="#i-phone"/></svg>
+            <input class="text-input" type="tel" name="phone" required placeholder="+91 98xxx xxxxx" value="${escapeAttr(state.answers.phone||'')}"/></div></div>
+      </div>
+      <div class="field"><label><svg class="ico ico-sm"><use href="#i-pin"/></svg> CITY / COUNTRY</label>
+        <div class="input-wrap"><svg class="ico in-icon"><use href="#i-pin"/></svg>
+          <input class="text-input" type="text" name="city" placeholder="e.g., Mumbai, India" value="${escapeAttr(state.answers.city||'')}"/></div></div>
+      <span class="privacy"><svg class="ico ico-sm"><use href="#i-lock"/></svg> REVIEWED ONLY BY OUR SENIOR STRATEGIST</span>
+      <div class="err" id="stepErr">// Fill all required fields with a valid email.</div>
+    `;
+  } else {
+    const stored = state.answers[step.key];
+    const isChecked = (label)=>{
+      if(step.type === 'checkbox') return Array.isArray(stored) && stored.includes(label);
+      return stored === label;
+    };
+    const oneCol = step.options.length >= 5 || step.type === 'checkbox' ? 'one-col' : '';
+    const optsHtml = step.options.map(o=>{
+      const inputType = step.type === 'checkbox' ? 'checkbox' : 'radio';
+      const checked = isChecked(o.label) ? 'checked' : '';
+      const selected = isChecked(o.label) ? 'selected' : '';
+      return `<label class="opt ${selected}" data-value="${escapeAttr(o.label)}">
+        <input type="${inputType}" name="${step.key}" value="${escapeAttr(o.label)}" data-score="${o.score}" ${checked}/>
+        <span class="opt-emoji">${o.emoji||''}</span>
+        <span class="opt-txt">${o.label}</span></label>`;
+    }).join('');
+    wrap.innerHTML = `
+      <div class="q-head">
+        <div class="q-icon"><svg class="ico"><use href="#${step.icon}"/></svg></div>
+        <div><span class="q-num">${step.tag}</span><h3 class="q-title">${step.title}</h3></div>
+      </div>
+      ${step.hint?`<p class="q-hint">${step.hint}</p>`:''}
+      <div class="options ${oneCol}">${optsHtml}</div>
+      <div class="err" id="stepErr">// Pick an option to continue.</div>
+    `;
+  }
+
+  modalBody.appendChild(wrap);
+  modalBody.scrollTop = 0;
+  updateNavUI();
+  attachStepListeners();
+}
+function escapeAttr(s){ return String(s).replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+
+function attachStepListeners(){
+  const step = STEPS[state.cursor];
+  if(step.type === 'contact'){
+    modalBody.querySelectorAll('input').forEach(inp=>{
+      inp.addEventListener('input', ()=>{ state.answers[inp.name] = inp.value.trim(); });
+      inp.addEventListener('keydown', e=>{
+        if(e.key === 'Enter' && inp.name !== 'city'){ e.preventDefault(); goNext(); }
+      });
+    });
+    return;
+  }
+  modalBody.querySelectorAll('.opt').forEach(optEl=>{
+    const input = optEl.querySelector('input');
+    optEl.addEventListener('click', e=>{
+      if(e.target.tagName === 'INPUT') return;
+      e.preventDefault();
+      input.checked = step.type === 'checkbox' ? !input.checked : true;
+      input.dispatchEvent(new Event('change', { bubbles:true }));
+    });
+    input.addEventListener('change', ()=>{
+      if(step.type === 'radio'){
+        modalBody.querySelectorAll('.opt').forEach(el=>el.classList.remove('selected'));
+      }
+      optEl.classList.toggle('selected', input.checked);
+
+      if(step.type === 'checkbox'){
+        const checked = Array.from(modalBody.querySelectorAll(`input[name="${step.key}"]:checked`)).map(i=>i.value);
+        state.answers[step.key] = checked;
+      } else {
+        state.answers[step.key] = input.value;
+      }
+
+      if(step.branch && step.key === 'q7_worked_agency'){
+        if(input.value === 'No'){
+          delete state.answers.q8_experience;
+          delete state.answers.q9_disappointed;
+        }
+      }
+
+      if(step.type === 'radio'){
+        const advanceFromCursor = state.cursor;
+        setTimeout(()=>{
+          if(state.cursor === advanceFromCursor && !state.submitted) goNext();
+        }, 380);
+      }
+    });
+  });
+}
+
+/* ============ NAV ============ */
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const submitBtn = document.getElementById('submitBtn');
+const progressBar = document.getElementById('progressBar');
+const counterNow = document.getElementById('counterNow');
+const counterTotal = document.getElementById('counterTotal');
+const cpLabel = document.getElementById('cpLabel');
+const cpEls = document.querySelectorAll('.cp');
+
+function updateNavUI(){
+  const step = STEPS[state.cursor];
+  const visible = visibleIndices();
+  const posInVisible = visible.indexOf(state.cursor);
+  const pct = ((posInVisible + 1) / visible.length) * 100;
+  progressBar.style.width = pct + '%';
+
+  if(step.type === 'contact'){
+    counterNow.textContent = '—';
+    counterTotal.textContent = visibleQuestionCount();
+  } else {
+    counterNow.textContent = currentQNumber();
+    counterTotal.textContent = visibleQuestionCount();
+  }
+
+  cpLabel.textContent = String(step.section + 1).padStart(2,'0');
+  cpEls.forEach((el, i)=>{
+    el.classList.toggle('active', i === step.section);
+    el.classList.toggle('done', i < step.section);
+  });
+
+  prevBtn.disabled = posInVisible === 0;
+  const isLast = posInVisible === visible.length - 1;
+  nextBtn.classList.toggle('hidden', isLast);
+  submitBtn.classList.toggle('hidden', !isLast);
+}
+
+function findNextVisible(from){ for(let i=from+1;i<STEPS.length;i++){ if(isStepVisible(STEPS[i])) return i; } return -1; }
+function findPrevVisible(from){ for(let i=from-1;i>=0;i--){ if(isStepVisible(STEPS[i])) return i; } return -1; }
+
+function validateCurrent(){
+  const step = STEPS[state.cursor];
+  const err = document.getElementById('stepErr');
+  if(err) err.classList.remove('show');
+  if(step.type === 'contact'){
+    const required = ['full_name','specialty','email','phone'];
+    for(const key of required){
+      const val = (state.answers[key]||'').trim();
+      if(!val){
+        if(err) err.classList.add('show');
+        const el = modalBody.querySelector(`[name="${key}"]`);
+        if(el) el.focus();
+        return false;
+      }
+    }
+    const email = (state.answers.email||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      if(err){ err.textContent = '// Please enter a valid email address.'; err.classList.add('show'); }
+      const el = modalBody.querySelector('[name="email"]');
+      if(el) el.focus();
+      return false;
+    }
+    return true;
+  }
+  const ans = state.answers[step.key];
+  if(step.type === 'checkbox'){
+    if(!ans || !ans.length){ if(err) err.classList.add('show'); return false; }
+  } else {
+    if(!ans){ if(err) err.classList.add('show'); return false; }
+  }
+  return true;
+}
+
+function goNext(){
+  if(state.submitted) return;
+  if(!validateCurrent()) return;
+  const next = findNextVisible(state.cursor);
+  if(next === -1) return;
+  state.cursor = next;
+  renderStep(state.cursor);
+}
+function goPrev(){
+  if(state.submitted) return;
+  const prev = findPrevVisible(state.cursor);
+  if(prev === -1) return;
+  state.cursor = prev;
+  renderStep(state.cursor);
+}
+prevBtn.addEventListener('click', goPrev);
+nextBtn.addEventListener('click', goNext);
+
+/* ============ SCORING (INTERNAL ONLY — NEVER SHOWN) ============ */
+function computeScore(){
+  let raw = 0;
+  STEPS.forEach(step=>{
+    if(step.type === 'contact') return;
+    if(!isStepVisible(step)) return;
+    const ans = state.answers[step.key];
+    if(!ans) return;
+    if(step.type === 'checkbox' && Array.isArray(ans)){
+      ans.forEach(l=>{ const o = step.options.find(o=>o.label===l); if(o) raw += o.score; });
+    } else {
+      const o = step.options.find(o=>o.label===ans);
+      if(o) raw += o.score;
+    }
+  });
+  return { raw, normalized: Math.round((raw / MAX_SCORE) * 100) };
+}
+function tierFor(score){
+  if(score >= 80) return 'HOT';
+  if(score >= 60) return 'WARM';
+  if(score >= 40) return 'NURTURE';
+  return 'COLD';
+}
+
+function buildPayload(){
+  const { raw, normalized } = computeScore();
+  const payload = {
+    submitted_at: new Date().toISOString(),
+    lead_score: normalized,          // INTERNAL — for sheet only
+    lead_score_raw: raw,             // INTERNAL — for sheet only
+    lead_tier: tierFor(normalized),  // INTERNAL — for sheet only
+    full_name: state.answers.full_name || '',
+    specialty: state.answers.specialty || '',
+    email: state.answers.email || '',
+    phone: state.answers.phone || '',
+    city: state.answers.city || '',
+    page_url: window.location.href,
+    user_agent: navigator.userAgent
+  };
+  STEPS.forEach(step=>{
+    if(step.type === 'contact') return;
+    const ans = state.answers[step.key];
+    payload[step.key] = (step.type === 'checkbox' && Array.isArray(ans)) ? ans.join(' | ') : (ans || '');
+  });
+  return payload;
+}
+
+/* ============ GOOGLE SHEET ============ */
+const GOOGLE_SHEET_WEBHOOK = ""; // Paste Apps Script /exec URL here
+
+async function sendToSheet(payload){
+  if(!GOOGLE_SHEET_WEBHOOK) return { ok:false, offline:true };
+  try{
+    await fetch(GOOGLE_SHEET_WEBHOOK, {
+      method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
+    return { ok:true };
+  }catch(e){ return { ok:false, error:String(e) }; }
+}
+
+submitBtn.addEventListener('click', async ()=>{
+  if(state.submitted) return;
+  if(!validateCurrent()) return;
+  state.submitted = true;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<svg class="ico"><use href="#i-clock"/></svg> SUBMITTING…';
+  const payload = buildPayload();
+  try{
+    const arr = JSON.parse(localStorage.getItem('wcm_leads')||'[]');
+    arr.push(payload);
+    localStorage.setItem('wcm_leads', JSON.stringify(arr));
+  }catch(e){}
+  await sendToSheet(payload);
+  document.getElementById('modalBody').classList.add('hidden');
+  document.getElementById('modalFooter').classList.add('hidden');
+  document.getElementById('checkpoints').classList.add('hidden');
+  document.querySelector('.progress-wrap').classList.add('hidden');
+  document.getElementById('doneScreen').classList.remove('hidden');
+  // NOTE: Lead score is intentionally NOT shown to the user.
+});
+
+/* ============ MODAL ============ */
+const overlay = document.getElementById('modalOverlay');
+const closeBtn = document.getElementById('modalClose');
+let savedScrollY = 0;
+
+function openModal(mode){
+  overlay.classList.add('open');
+  overlay.classList.toggle('exit', mode === 'exit');
+  overlay.setAttribute('aria-hidden','false');
+  savedScrollY = window.scrollY;
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
+  if(!modalBody.querySelector('.step')) renderStep(state.cursor);
+  const step = STEPS[state.cursor];
+  if(step.type === 'contact'){
+    setTimeout(()=>{
+      const first = modalBody.querySelector('input[name="full_name"]');
+      if(first) first.focus();
+    }, 300);
+  }
+}
+function closeModal(){
+  overlay.classList.remove('open','exit');
+  overlay.setAttribute('aria-hidden','true');
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, savedScrollY);
+}
+
+document.querySelectorAll('[data-open-modal]').forEach(el=>{
+  el.addEventListener('click', e=>{ e.preventDefault(); openModal(); });
+});
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', e=>{ if(e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e=>{
+  if(!overlay.classList.contains('open')) return;
+  if(e.key === 'Escape') closeModal();
+  if(e.key === 'Enter'){
+    const activeTag = document.activeElement && document.activeElement.tagName;
+    if(activeTag !== 'INPUT' && activeTag !== 'TEXTAREA' && activeTag !== 'BUTTON'){
+      const visible = visibleIndices();
+      const isLast = visible.indexOf(state.cursor) === visible.length - 1;
+      if(isLast) submitBtn.click(); else goNext();
+    }
+  }
+});
+
+let exitFired = sessionStorage.getItem('wcm_exit') === '1';
+document.addEventListener('mouseleave', e=>{
+  if(exitFired) return;
+  if(e.clientY <= 0 && window.innerWidth > 820){
+    exitFired = true; sessionStorage.setItem('wcm_exit','1'); openModal('exit');
+  }
+});
+
+let scrollFired = sessionStorage.getItem('wcm_scroll') === '1';
+window.addEventListener('scroll', ()=>{
+  if(scrollFired || overlay.classList.contains('open')) return;
+  const pct = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+  if(pct > 0.6){
+    scrollFired = true; sessionStorage.setItem('wcm_scroll','1'); openModal();
+  }
+}, { passive:true });
+
+renderStep(0);
+window.__wcm = { state, STEPS, computeScore, MAX_SCORE };
+
+})();
+</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
