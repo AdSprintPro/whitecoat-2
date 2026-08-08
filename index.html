@@ -1040,7 +1040,7 @@ function buildPayload(){
 }
 
 /* ============ GOOGLE SHEET ============ */
-const GOOGLE_SHEET_WEBHOOK = ""; // Paste Apps Script /exec URL here
+const GOOGLE_SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbwpLXIRrbDVgfVP23-5ovESKqq6yMgetbYqS7FYLcl58prSzRLrvwvI4oysHWHN5QiqHA/exec"; // Paste Apps Script /exec URL here
 
 async function sendToSheet(payload){
   if(!GOOGLE_SHEET_WEBHOOK) return { ok:false, offline:true };
